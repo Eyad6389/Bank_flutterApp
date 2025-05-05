@@ -66,6 +66,9 @@ From the Bank Account Page, you can navigate to your **Profile Page**, where you
   - When a transaction starts, `isProcessing` becomes `true`
   - Once the transaction is done and added, it becomes `false`
   - If the user clicks too fast, a message shows: “**Transaction is still processing**”
+- I **couldn’t run the emulator** on my laptop because it made the device too slow. Instead, I connected my **real phone using a USB cable** and ran the app on it.
+  - This allowed me to test the app across **multiple phones in the house**
+  - I could ensure the app **looked good on different screen sizes** and dimensions
 - In the project files, you will find some **small widget files**. I made those to reduce the number of lines in the main screen files. Some widgets are small and some are larger, but this helped me **keep the main UI files clean and more organized**.
 
 ---
