@@ -1,0 +1,35 @@
+// Root project-level build.gradle
+
+buildscript {
+    ext.kotlin_version = '2.1.0' // Add this line to specify Kotlin version
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Add the classpath for the Google services plugin
+        classpath 'com.google.gms:google-services:4.4.2' // Make sure the correct version is here
+
+        // Add Kotlin Gradle plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // Other classpath dependencies for your project (e.g., Gradle plugin)
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

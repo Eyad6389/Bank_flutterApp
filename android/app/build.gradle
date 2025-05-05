@@ -1,0 +1,59 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services' // Google services integration
+}
+
+android {
+    namespace = "com.example.flutter_application_1"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        applicationId = "com.example.flutter_application_1"
+        minSdk = 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:33.9.0')
+
+    // Firebase Analytics dependency
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Add Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Add Firebase Firestore
+    implementation 'com.google.firebase:firebase-firestore'
+
+    // Add Firebase Realtime Database
+    implementation 'com.google.firebase:firebase-database'
+
+    // Add Firebase Cloud Messaging (optional)
+    implementation 'com.google.firebase:firebase-messaging'
+}
+
+flutter {
+    source = "../.."
+}
